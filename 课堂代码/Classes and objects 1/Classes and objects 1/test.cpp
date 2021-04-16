@@ -167,9 +167,6 @@ using namespace std;
 //	return 0;
 //}
 
-
-
-
 ////运算符重载
 //class Date{
 //public:
@@ -196,6 +193,7 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+
 
 ////赋值运算符重载
 //class Date{
