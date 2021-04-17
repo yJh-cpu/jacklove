@@ -1,5 +1,56 @@
 #include<iostream>
 using namespace std;;
+////初始化列表 构造函数
+//class Date{
+//public:
+//	Date(int year, int month, int day) :                     //每个成员变量在初始化列表只能初始化一次              
+//		_year(year)                                          //1引用成员变量 2.const成员变量 3.自定义成员类型必须在初始化列表初始书
+//		, _month(month)
+//		, _day(day){
+//		cout << _year << "-" << _month << "-" << _day << endl;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main(){
+//	Date(1900, 1, 1);
+//	system("pause");
+//	return 0;
+//}
+
+
+////自定义类型使用初始化列表。
+//class Time
+//{
+//public:
+//	Time(int hour =0)
+//		:_hour(hour)
+//	{
+//		cout << "Time()" << endl;
+//	}
+//private:
+//	int _hour;
+//};
+//class Date
+//{
+//public:
+//	Date(int day)
+//	{}
+//private:
+//	int _day;
+//	Time _t;
+//};
+//int main()
+//{
+//	Date d(1);
+//	system("pause");
+//	return 0;
+//}
+
+
+//static修饰的成员变量
 //void print(int a,int b,int n);
 //	int n = 1;               //全局变量
 //	void func()
@@ -113,28 +164,31 @@ using namespace std;;
 
 
 
+////内部类
+//class A
+//{
+//private:
+//	static int k;
+//	int h;
+//public:
+//	class B
+//	{
+//	public:
+//		void foo(const A& a)
+//		{
+//			cout << k << endl;//OK
+//			cout << a.h << endl;//OK
+//		}
+//	};
+//};
+//int A::k = 1;
+//int main()
+//{
+//	A::B b;
+//	b.foo(A());
+//
+//	return 0;
+//}
 
-class A
-{
-private:
-	static int k;
-	int h;
-public:
-	class B
-	{
-	public:
-		void foo(const A& a)
-		{
-			cout << k << endl;//OK
-			cout << a.h << endl;//OK
-		}
-	};
-};
-int A::k = 1;
-int main()
-{
-	A::B b;
-	b.foo(A());
 
-	return 0;
-}
+
