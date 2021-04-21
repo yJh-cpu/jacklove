@@ -38,32 +38,32 @@ using namespace std;
 
 
 
-//类模板的定义格式
-template<class A>
-class Vector{
-public:
-	Vector(size_t capacity=10)
-		:_pdata(new(A)[capacity])
-		, _size(0)
-		, _capacity(capacity){}
-	~Vector();
-	A& operator[](size_t pos)
-	{
-		assert(pos < _size);
-		return _pdata[pos];
-	}
-private:
-	A* _pdata;
-	size_t _size;
-	size_t _capacity;
-};
-//类模板函数在类外进行定义
-template<class A>
-Vector<A>::~Vector(){
-	delete[]_pdata;
-	_size = 0;
-	_capacity = 0;
-}
-int main(){
-	return 0;
-}
+////类模板的定义格式
+//template<class A>
+//class Vector{
+//public:
+//	Vector(size_t capacity=10)
+//		:_pdata(new(A)[capacity])
+//		, _size(0)
+//		, _capacity(capacity){}
+//	~Vector();
+//	A& operator[](size_t pos)
+//	{
+//		assert(pos < _size);
+//		return _pdata[pos];
+//	}
+//private:
+//	A* _pdata;
+//	size_t _size;
+//	size_t _capacity;
+//};
+////类模板函数在类外进行定义
+//template<class A>
+//Vector<A>::~Vector(){
+//	delete[]_pdata;
+//	_size = 0;
+//	_capacity = 0;
+//}
+//int main(){
+//	return 0;
+//}
