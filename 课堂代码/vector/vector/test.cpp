@@ -158,19 +158,90 @@ using namespace std;
 //	return 0;
 //}
 
-//find查找   insert在position位置之前插入val 删除position的val
-int main(){
-	int array[] = {1,2,3,4,5,6};
-	vector<int>v(array, array + sizeof(array) / sizeof(int));
-	vector<int>::iterator it = v.begin();
-	while (it!= v.end()){
-		cout << *it << ' ';
-		it++;
-	}
-	cout << endl;
-	//使用find查找3所在位置的迭代器
-	vector<int>::iterator pos = find(v.begin(), v.end(), 3);
-	cout << *pos << endl;
-	v.insert(pos, 100);
-	return 0;
-}
+//find查找   insert在position位置所在迭代器之前插入val erase删除position位置迭代器的val
+//int main(){
+//	int array[] = {1,2,3,4,5,6};
+//	vector<int>v(array, array + sizeof(array) / sizeof(int));
+//	vector<int>::iterator it = v.begin();
+//	while (it!= v.end()){
+//		cout << *it << ' ';
+//		it++;
+//	}
+//	cout << endl;
+//	//使用find查找3所在位置的迭代器
+//	vector<int>::iterator pos = find(v.begin(), v.end(), 3);
+//	cout << *pos << endl;
+//	//在pos位置之前插入100
+//	v.insert(pos, 100);              //要再次进行遍历才能访问（其实就是给it重新赋值），否则直接访问会出现迭代器失效（原来的it空间已经被释放没有了）
+//	it = v.begin();
+//	while (it != v.end()){
+//		cout << *it << ' ';
+//		it++;
+//	}
+//	cout << endl;
+//	//找到6所在位置的迭代器,并且删除这个位置的数据
+//	pos = find(v.begin(), v.end(), 6);
+//	v.erase(pos);
+//	it = v.begin();
+//	while (it != v.end()){
+//		cout << *it << ' ';
+//		it++;
+//	}
+//	cout << endl;
+//	return 0;
+//}
+
+
+
+//使用operator[]来进行遍历
+//int main(){
+//	int array[] = {1,2,3,4,5,6};
+//	vector<int>v(array, array + sizeof(array) / sizeof(int));
+//	v[0] = 100;
+//	cout << v[0] << endl;
+//	for (int i = 0; i < v.size(); i++) {
+//		cout << v[i] <<' ';
+//	}
+//	cout << endl;
+//	//swap交换两个vector的数据空间
+//	vector<int>_swap(6,1000);
+//	_swap.swap(v);
+//	cout << "v data:";
+//	for (int i = 0; i < v.size(); i++) {
+//		cout << v[i] << ' ';
+//	}
+//	cout << endl;
+//	cout << "_swap data:";
+//	for (int i = 0; i < _swap.size(); i++) {
+//		cout << _swap[i] << ' ';
+//	}
+//	cout << endl;
+//	//范围for进行遍历（只有在c++11和C++11之后支持）
+//	for (auto e : v){
+//		cout << e << ' ';
+//	}
+//	cout << endl;
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+//erase删除之后迭代器失效了
+//int main()
+//{
+//	int a[] = { 1, 2, 3, 4 };
+//	vector<int> v(a, a + sizeof(a) / sizeof(int));
+//	// 使用find查找3所在位置的iterator
+//	vector<int>::iterator pos = find(v.begin(), v.end(), 3);
+//	// 删除pos位置的数据，导致pos迭代器失效。
+//	v.erase(pos);
+//	cout << *pos << endl;    // 此处会导致非法访问(erase删除pos位置元素后，pos位置之后的元素会往前搬移，没有导致底层空间的改变，理论上讲迭代
+//	                         //器不应该会失效，但是：如果pos刚好是最后一个元素，删完之后pos刚好是end的位置，而end位没有元素的，那么pos就失效了
+//                           //，因此删除vector中任意位置上元素时，vs就认为该位置迭代器失效了)
+//	return 0;
+//}
