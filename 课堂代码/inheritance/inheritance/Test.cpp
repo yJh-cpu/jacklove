@@ -60,7 +60,6 @@ void test(){
 	person*p2 = &s;
 }
 int main(){
-
 	system("pause");
 	return 0;
 }
