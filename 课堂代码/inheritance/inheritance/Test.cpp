@@ -42,24 +42,53 @@ using namespace std;
 //}
 
 //基类和派生类赋值转换
-class person{
-protected:
-	string _name;
-	int _age;
-	string _sex;
+//class person{
+//protected:
+//	string _name;
+//	int _age;
+//	string _sex;
+//};
+//class student:public person{
+//public:
+//	int _num;
+//};
+//void test(){
+//	//子类对象可以赋值给父类对象.父类引用.父类指针（切片或者叫切割->把派生类中那部分父类去掉）
+//	student s;
+//	person p = s;
+//	person&p1 = s;
+//	person*p2 = &s;
+//	//基类对象不能赋值给派生类对象
+//	//s = p;
+//	//基类指针可以通过强制类型转换赋值给派生类指针
+//	p2 = &s;
+//	student *s1 = (student*)p2;//转换之后指向派生类的基类指针就可以调用成员函数（成员对象）
+//	s1-> _num = 10;
+//}
+//int main(){
+//	system("pause");
+//	return 0;
+//}
+//隐藏（重定义）
+class A{
+public:
+	void  fun(int i){
+		cout << "class A" <<"="<<i<<endl;
+	}
 };
-class student:public person{
-private:
-	int _num;
+class B :public A{
+public:
+	void fun(){
+		cout << "class B" << endl;
+		A::fun(10);//基类：：成员函数（显示访问）
+	}
 };
 void test(){
-	//子类对象可以赋值给父类对象.父类引用.父类指针（切片或者叫切割->把派生类中那部分父类去掉）
-	student s;
-	person p = s;
-	person&p1 = s;
-	person*p2 = &s;
+	B c;
+	c.fun();
 }
 int main(){
+	test();
 	system("pause");
 	return 0;
 }
