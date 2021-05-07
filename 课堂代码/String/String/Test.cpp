@@ -13,6 +13,7 @@ void stringtest(){
 	str.resize(10, 'a');
 	cout << str.size() << endl;
 	cout << str.capacity() << endl;//将s中有效字符个数增加到10个，多出位置用'a'进行填充
+	cout << str << endl;
 	str.resize(20);
 	cout << str.size() << endl;
 	cout << str.capacity() << endl;

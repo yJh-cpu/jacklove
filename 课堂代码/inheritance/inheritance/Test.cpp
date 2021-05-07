@@ -69,26 +69,43 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
-//隐藏（重定义）
-class A{
-public:
-	void  fun(int i){
-		cout << "class A" <<"="<<i<<endl;
+
+
+
+
+//隐藏（重定义）->子类成员将屏蔽父类的成员函数
+//class A{
+//public:
+//	void  fun(int i){
+//		cout << "class A" <<"="<<i<<endl;
+//	}
+//};
+//class B :public A{
+//public:
+//	void fun(){
+//		cout << "class B" << endl;
+//		A::fun(10);//如果要进行访问父类的同名成员函数//基类：：成员函数（显示访问）
+//	}
+//};
+//void test(){
+//	B c;
+//	c.fun();
+//}
+//int main(){
+//	test();
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//派生类的默认成员函数
+class person{
+	person(const string name="zhangsan")
+	:_name(name){
+		cout << "person()" << endl;
 	}
+
+protected:
+	string _name;
 };
-class B :public A{
-public:
-	void fun(){
-		cout << "class B" << endl;
-		A::fun(10);//基类：：成员函数（显示访问）
-	}
-};
-void test(){
-	B c;
-	c.fun();
-}
-int main(){
-	test();
-	system("pause");
-	return 0;
-}
