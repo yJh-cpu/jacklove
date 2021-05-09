@@ -100,12 +100,40 @@ using namespace std;
 
 
 //派生类的默认成员函数
-class person{
-	person(const string name="zhangsan")
-	:_name(name){
-		cout << "person()" << endl;
-	}
+//class person{
+//	person(const string name="zhangsan")
+//	:_name(name){
+//		cout << "person()" << endl;
+//	}
+//
+//protected:
+//	string _name;
+//};
+int max_cur_bit1()
+{
+	int n;
+	cin >> n;
 
-protected:
-	string _name;
-};
+	int max = 0;
+
+	while (n)
+	{
+		int count = 0;
+		while (n & 1 == 1)
+		{
+			count++;
+			n = n >> 1;
+		}
+		//出来了，说明1不连续了
+		//比较和之前的max,大的话就更新max
+		max = count > max ? count : max;
+		n = n >> 1;
+	}
+	cout << max << endl;
+	return max;
+}
+int main(){
+	max_cur_bit1();
+	system("pause");
+	return 0;
+}
