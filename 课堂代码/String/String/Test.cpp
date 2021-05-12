@@ -62,19 +62,30 @@ using namespace std;
 
 	
 
-	string solve(string str)
-	{
-			// write code here
-			int len = str.size();
-			string ans = str;
-			for (int i = 0; i < len; i++){
-				ans[i] = str[len - 1 - i];
-			}
-			cout << ans << endl;
-			return str;
-		}
-	int main(){
-		solve("abcd");
-		system("pause");
-		return 0;
-	}
+	//string solve(string str)
+	//{
+	//		// write code here
+	//		int len = str.size();
+	//		string ans = str;
+	//		for (int i = 0; i < len; i++){
+	//			ans[i] = str[len - 1 - i];
+	//		}
+	//		cout << ans << endl;
+	//		return str;
+	//	}
+	//int main(){
+	//	solve("abcd");
+	//	system("pause");
+	//	return 0;
+	//}
+
+int main()
+{
+	std::string name;
+
+	std::cout << "Please, enter your full: ";
+	std::getline(std::cin, name);
+	std::cout << "Hello, " << name << "!\n";
+	system("pause");
+	return 0;
+}
