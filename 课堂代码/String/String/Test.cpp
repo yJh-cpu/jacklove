@@ -79,13 +79,38 @@ using namespace std;
 	//	return 0;
 	//}
 
-int main()
+class Person
 {
-	std::string name;
-
-	std::cout << "Please, enter your full: ";
-	std::getline(std::cin, name);
-	std::cout << "Hello, " << name << "!\n";
+public:
+	Person() { ++_count; }
+protected:
+	string _name; // 姓名
+public:
+	static int _count; // 统计人的个数。
+};
+int Person::_count = 0;
+class Student : public Person
+{
+protected:
+	int _stuNum; // 学号
+};
+class Graduate : public Student
+{
+protected:
+	string _seminarCourse; // 研究科目
+};
+void TestPerson()
+{
+	Student s1;
+	Student s2;
+	Student s3;
+	Graduate s4;
+	cout << " 人数 :" << Person::_count << endl;
+	Student::_count = 0;
+	cout << " 人数 :" << Person::_count << endl;
+}
+int main(){
+	TestPerson();
 	system("pause");
 	return 0;
 }
