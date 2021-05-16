@@ -109,6 +109,7 @@ void TestPerson()
 	Student::_count = 0;
 	cout << " ÈËÊı :" << Person::_count << endl;
 }
+
 int main(){
 	TestPerson();
 	system("pause");
