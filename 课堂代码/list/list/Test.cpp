@@ -50,43 +50,53 @@ using namespace std;
 //int main(){
 //	int array[] = { 1, 2, 3 };
 //	list<int>ls(array, array + sizeof(array) / sizeof(int));
-//	//使用push_back进行尾插
+//	
+//使用push_back进行尾插
 //	ls.push_back(100);
 //	ls.push_back(116);
 //	ls.push_back('Q');
 //	print(ls);
+
 //	//push_front头插
 //	ls.push_front(1314);
 //	print(ls);
+
 //	//pop_back尾删
 //	ls.pop_back();
 //	ls.pop_back();
 //	print(ls);
+
 //	//pop_front头删
 //	ls.pop_front();
 //	ls.pop_front();
 //	print(ls);
+
 //	//insert插入
 //	auto pos = ls.begin();
 //	pos++;
 //	ls.insert(pos, 123);
+
 //	//插入区间元素
 //	vector<int>v = { 1, 2, 3 };
 //	ls.insert(pos, v.begin(), v.end());
 //	print(ls);
+
 //	//erase删除
 //	auto pos1 = ls.end();
 //	pos1--;
 //	ls.erase(pos1);
+
 //	//删除区间元素
 //	ls.erase(++ls.begin(), ls.end());
 //	print(ls);
+
 //	//swap交换函数
 //	int array1[] = { 1232, 123124, 14325325 };
 //	list<int>ls2(array1, array1 + sizeof(array1) / sizeof(int));
 //	print(ls2);
 //	ls.swap(ls2);
 //	print(ls2);
+
 //	//clear清空链表中的所有元素
 //	ls2.clear();
 //	cout << ls2.size() << endl;
@@ -96,7 +106,7 @@ using namespace std;
 
 
 
-//list迭代器失效
+//list迭代器失效（插入不会，只有删除才会，并且只有删除的哪一个节点会失效）
 //int main(){
 //	list<int>ls(6, 99);
 //	for (auto it = ls.begin(); it != ls.end(); it++){
@@ -110,18 +120,18 @@ using namespace std;
 //}
 
 
-//迭代器失效进行改正
-int main(){
-	list<int>ls(6, 99);
-	for (auto it = ls.begin(); it != ls.end(); it++){
-		cout << *it << ' ';
-	}
-	cout << endl;
-	list<int>::iterator it = ls.begin();
-	ls.erase(it++);// it = l.erase(it);
-	for (auto e : ls){
-		cout << e << ' ';
-	}
-	system("pause");
-	return 0;
-}
+//迭代器失效进行改正(重新遍历即可)
+//int main(){
+//	list<int>ls(6, 99);
+//	for (auto it = ls.begin(); it != ls.end(); it++){
+//		cout << *it << ' ';
+//	}
+//	cout << endl;
+//	list<int>::iterator it = ls.begin();
+//	ls.erase(it++);// it = l.erase(it);
+//	for (auto e : ls){
+//		cout << e << ' ';
+//	}
+//	system("pause");
+//	return 0;
+//}
