@@ -28,3 +28,5 @@ private:
 	//保存栈的最小值
 	stack<int>_min;
 };
+
+
