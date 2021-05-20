@@ -127,3 +127,16 @@ using namespace std;
 //	system("pause");
 //	return 0;
 //}
+
+#include<stdio.h>
+#include<string.h>
+char*ss = "qq";
+char* sss = new char;
+int main(){
+	//strcpy(sss, ss);
+	int b = strlen(ss);
+	int a = strlen(sss);
+	cout << a << b;
+	system("pause");
+	return 0;
+}
