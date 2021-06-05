@@ -109,6 +109,7 @@ using namespace std;
 //protected:
 //	string _name;
 //};
+
 int main(){
 	char a = 'Abv';
 	cout << a << endl;
