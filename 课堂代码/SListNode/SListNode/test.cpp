@@ -24,10 +24,15 @@ void SListPushFront(SListNode**pplist, SLTDataType x){
 //单链表头删
 void SListPopFront(SListNode**pplist){
 	//空
-	if (*pplist=NULL){
+	if (*pplist==NULL){
 		return;
 	}
-	//一个及以上的节点
+	//一个节点
+	else if ((*pplist)->next==NULL){
+		free(*pplist);
+		*pplist = NULL;
+	}
+	//一个以上节点
 	else{
 		SListNode* next = (*pplist)->next;
 		free(*pplist); //释放原来头指针的存储的内容
